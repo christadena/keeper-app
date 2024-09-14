@@ -8,7 +8,7 @@ function App() {
     <div>
       <Header />
       <div>
-      <Note title="My Note Title" content="This is the content of the note." />
+      <Note/>
       </div>
       <Footer />
     </div>
