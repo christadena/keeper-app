@@ -24,6 +24,8 @@ export default [
       'react-refresh': reactRefresh,
     },
     rules: {
+      "prettier/prettier": ["error", { "singleQuote": true, "printWidth": 80 }],
+    "no-unused-vars": "off", // Example rule to ignore
       ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
@@ -32,7 +34,9 @@ export default [
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
+        
       ],
+      
     },
   },
 ]
