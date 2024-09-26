@@ -1,0 +1,35 @@
+/* From Uiverse.io by barisdogansutcu */ 
+button {
+    border-radius: 500px;
+    cursor: pointer;
+    border: 0;   
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    transition: all 0.5s ease;
+    text-align: center;
+    background-color: hsl(261deg 80% 48%);
+    position: absolute;
+    right: 18px;
+    bottom: -18px;
+    color: #e9e9e9;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    outline: none;
+  }
+  
+  button:hover {
+    background-color: hsl(261deg 80% 48%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+  }
+  
+  button:active {
+    background-color: hsl(261deg 80% 48%);
+
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+  }
+  

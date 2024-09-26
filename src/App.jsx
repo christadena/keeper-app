@@ -1,24 +1,33 @@
-import Header from './Header';
-import Footer from './Footer';  
-import './App.css';
-import Note from './Note';
-import noteContent from './noteContent';
+import React, { useState } from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Note from "./components/Note";
+import CreateArea from "./components/CreateArea";
 
 function App() {
+  const [notes, setNotes] = useState([]);
+
+  function addNote(newNote) {
+    setNotes((prevNotes) => [...prevNotes, newNote]);
+  }
+
+  function deleteNote(id) {
+    setNotes((prevNotes) => prevNotes.filter((_, index) => index !== id));
+  }
+
   return (
     <div>
       <Header />
-      <div className="flex flex-wrap">
-        {noteContent.map((textContent) => (
-          <div
-            key={textContent.id}
-            className="block min-w-[400px] max-w-sm p-6 m-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-          >
-            <Note
-              title={textContent.title}
-              content={textContent.content}
-            />
-          </div>
+      <CreateArea onAdd={addNote} />
+      <div className="notes-container">
+        {notes.map((note, index) => (
+          <Note
+            key={index}
+            id={index}
+            title={note.title}
+            content={note.content}
+            onDelete={deleteNote}
+          />
         ))}
       </div>
       <Footer />
